@@ -1,0 +1,4 @@
+record_id,email,amount
+A-100,alice@example.com,12.00
+ A-100,alice@example.com,12.00
+A-101,bob@example.com,9.50

@@ -26,7 +26,7 @@ Two rows with the same SKU may represent two legitimate orders. Two rows with di
 
 Use a sanitized sample, the expected duplicate key, the desired output format, and one example of a correct result. Never send passwords, cookies, API keys, or customer data that you do not have permission to process.
 
-If you need one clearly defined CSV/Excel cleanup task delivered as a file, see the [fixed-scope cleanup service](https://www.fiverr.com/users/awkrea/manage_gigs/write-a-custom-python-automation-script-for-web-scraping-excel-and-data-tasks-fbfb/edit). Complex joins, repeated batch processing, validation reports, and Python automation belong in a larger scope.
+If you need one clearly defined CSV/Excel cleanup task delivered as a file, see the [fixed-scope cleanup service on Fiverr](https://www.fiverr.com/awkrea/write-a-custom-python-automation-script-for-web-scraping-excel-and-data-tasks-fbfb). Complex joins, repeated batch processing, validation reports, and Python automation belong in a larger scope.
 
 ## Related searches
 

@@ -62,3 +62,14 @@ This repository is designed around real troubleshooting queries such as:
 ## License
 
 Use and modify this diagnostic for local data-quality checks. You are responsible for confirming that you have the right to process the data.
+
+
+## Troubleshooting guides
+
+See the [CSV and Excel data repair guides](docs/index.md) for reproducible pages on duplicate rows, UTF-8/UnicodeDecodeError, leading-zero identifiers, and safe cleanup boundaries.
+
+To run the regression checks after cloning:
+
+```bash
+python tests/test_diagnostic.py
+```

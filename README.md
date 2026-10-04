@@ -16,23 +16,24 @@ This is useful for Shopify product CSV imports, ecommerce order exports, invento
 
 Requirements: Python 3.10+ and a CSV file with a header row.
 
-
-default command:
-
 ```bash
 python diagnose_csv.py sample/orders.csv
 ```
 
 The script reads the selected local file and prints an aggregate report. It does not upload data, change rows, bypass access controls, or collect credentials.
 
-## Example output
+## Example output from sample/orders.csv
 
-```
-rows: 6
-columns: 5
-duplicate_rows: 1
-blank_values: 2
-column_types: order_id=numeric, email=email-like, sku=text
+```json
+{
+  "file": "orders.csv",
+  "rows": 4,
+  "columns": 4,
+  "headers": ["order_id", "email", "amount", "status"],
+  "blank_counts": {"order_id": 0, "email": 1, "amount": 0, "status": 0},
+  "duplicate_rows": 1,
+  "type_hints": {"order_id": "numeric", "email": "email-like", "amount": "numeric", "status": "text"}
+}
 ```
 
 Use only a sanitized sample. Remove passwords, API keys, cookies, payment information, private customer data, and production credentials.
@@ -43,9 +44,7 @@ The diagnostic does not infer business rules, join multiple files, calculate pro
 
 ## Need the file repaired?
 
-For one clearly defined CSV/Excel cleanup task, see the fixed-scope service:
-
-[Clean and format one CSV or Excel file on Fiverr](https://www.fiverr.com/users/awkrea/manage_gigs/write-a-custom-python-automation-script-for-web-scraping-excel-and-data-tasks-fbfb/edit)
+For one clearly defined CSV/Excel cleanup task, see the [fixed-scope cleanup service on Fiverr](https://www.fiverr.com/awkrea/write-a-custom-python-automation-script-for-web-scraping-excel-and-data-tasks-fbfb).
 
 The paid service can include agreed deduplication rules, field normalization, cross-file joins, validation checks, and delivery in the requested Excel, CSV, or import format. Start with a sanitized sample and the expected result. Never send passwords or access tokens.
 

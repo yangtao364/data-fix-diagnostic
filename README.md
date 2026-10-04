@@ -1,41 +1,65 @@
-# Free CSV Diagnostic
+# CSV and Excel Data Cleaning Diagnostic
 
-A small local-only diagnostic for Excel/CSV cleanup triage. It reports aggregate structure and data-quality signals without uploading the file.
+A local-only Python tool to diagnose common CSV and Excel data problems before you clean or import them.
 
-This is a qualification tool, not a free cleaning service. It does not change
-rows, infer business rules, join files, calculate profit, or produce an
-import-ready output. Those steps depend on the store's rules and are the scope
-of a paid, fixed-price repair.
+It helps you check:
 
-## Run
+- duplicate rows in CSV files
+- blank values and inconsistent columns
+- numeric, email-like, and text fields
+- malformed rows and basic file structure
+- whether a dataset is ready for a cleanup or import workflow
+
+This is useful for Shopify product CSV imports, ecommerce order exports, inventory spreadsheets, lead lists, and other Excel/CSV files.
+
+## Run the diagnostic
+
+Requirements: Python 3.10+ and a CSV file with a header row.
+
+
+default command:
 
 ```bash
 python diagnose_csv.py sample/orders.csv
 ```
 
-The output includes:
+The script reads the selected local file and prints an aggregate report. It does not upload data, change rows, bypass access controls, or collect credentials.
 
-- row and column counts
-- blank-value counts per column
-- duplicate-row count
-- conservative type hints (`numeric`, `email-like`, `text`)
+## Example output
 
-It reads only the selected local file. A header row is required. Extra fields in
-malformed rows are ignored in the aggregate report instead of being printed.
+```
+rows: 6
+columns: 5
+duplicate_rows: 1
+blank_values: 2
+column_types: order_id=numeric, email=email-like, sku=text
+```
 
-## Safe sample policy
+Use only a sanitized sample. Remove passwords, API keys, cookies, payment information, private customer data, and production credentials.
 
-Use a sanitized sample only. Remove passwords, API keys, cookies, payment information, private customer data, and production credentials. This tool does not bypass access controls or collect data from websites.
+## What this free tool does not do
 
-## What the paid service adds
+The diagnostic does not infer business rules, join multiple files, calculate profit, rewrite an import file, repair formulas, scrape login-protected websites, bypass CAPTCHA, or deploy an automation. Those tasks require the store's rules and a reviewable output.
 
-For a real dataset, a paid repair can include an agreed transformation plan,
-cross-file joins, deduplication rules, field normalization, validation checks,
-and delivery in the client's requested Excel/CSV or import format. The client
-keeps control of credentials and should share a sanitized sample first.
+## Need the file repaired?
 
-## Need a fixed-scope repair?
+For one clearly defined CSV/Excel cleanup task, see the fixed-scope service:
 
-If the report shows a problem, request a fixed-scope quote from the service
-page. Include the output, expected result, and a small sanitized sample. Do not
-send credentials. The free report helps confirm fit; it is not the deliverable.
+[Clean and format one CSV or Excel file on Fiverr](https://www.fiverr.com/users/awkrea/manage_gigs/write-a-custom-python-automation-script-for-web-scraping-excel-and-data-tasks-fbfb/edit)
+
+The paid service can include agreed deduplication rules, field normalization, cross-file joins, validation checks, and delivery in the requested Excel, CSV, or import format. Start with a sanitized sample and the expected result. Never send passwords or access tokens.
+
+## Typical search problems
+
+This repository is designed around real troubleshooting queries such as:
+
+- how to remove duplicate rows from CSV
+- how to clean inconsistent Excel columns
+- how to merge CSV files with Python
+- how to diagnose CSV encoding and Unicode errors
+- how to prepare a Shopify CSV import
+- how to validate an ecommerce inventory spreadsheet
+
+## License
+
+Use and modify this diagnostic for local data-quality checks. You are responsible for confirming that you have the right to process the data.

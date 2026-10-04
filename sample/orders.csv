@@ -1,0 +1,5 @@
+order_id,email,amount,status
+1001,alice@example.com,29.00,paid
+1002,bob@example.com,49.00,paid
+1002,bob@example.com,49.00,paid
+1003,,19.00,pending

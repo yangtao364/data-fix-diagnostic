@@ -6,6 +6,7 @@ Practical, local-first guides for diagnosing ecommerce CSV and Excel problems be
 
 - [Remove duplicate rows from a CSV with Python](remove-duplicate-rows-from-csv.md)
 - [Fix a CSV UTF-8 or UnicodeDecodeError](csv-utf8-unicodedecodeerror.md)
+- [Keep leading zeros when Excel imports a CSV](excel-leading-zeros.md)
 
 ## Free diagnostic
 
